@@ -14,6 +14,7 @@ public class SocketWrapper implements SocketInterface {
             clientSocket = serverSocket.accept();
             out = new PrintWriter(clientSocket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            out.println("Enter goodbye to exit");
         } catch(IOException e) {
             System.out.println(e.getMessage());
         }
@@ -40,6 +41,5 @@ public class SocketWrapper implements SocketInterface {
         } catch(IOException e) {
             System.out.println(e.getMessage());
         }
-
     }
 }
