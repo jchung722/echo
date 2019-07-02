@@ -47,4 +47,15 @@ public class EchoServerTest {
 
         Assert.assertTrue(testSocketWrapper.isStopped());
     }
+
+    @Test
+    public void stopsIfInputIsGoodbyeCaseInsensitive(){
+        BufferedReader in = new BufferedReader(new StringReader("GoOdByE"));
+        SocketWrapperSpy testSocketWrapper = new SocketWrapperSpy(in);
+        EchoServer testEchoServer = new EchoServer(testSocketWrapper);
+
+        testEchoServer.start(333);
+
+        Assert.assertTrue(testSocketWrapper.isStopped());
+    }
 }

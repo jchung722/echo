@@ -7,14 +7,12 @@ public class SocketWrapperSpy implements SocketInterface {
     private boolean createdAndListened = false;
     private boolean stopped = false;
     private BufferedReader in;
-//    private PrintWriter out;
     private String receivedData;
     private String sentData;
 
 
     public SocketWrapperSpy(BufferedReader in){
         this.in = in;
-//        this.out = new PrintWriter(new StringWriter(), true);
     }
 
     public SocketWrapperSpy(){
@@ -42,9 +40,7 @@ public class SocketWrapperSpy implements SocketInterface {
         return createdAndListened;
     }
 
-    public boolean isStopped() {
-        return stopped;
-    }
+    public boolean isStopped() { return stopped; }
 
     public String getReceivedData() {
         return receivedData;
